@@ -1,7 +1,7 @@
-let create = document.querySelector("F");
-let modal = document.querySelector("create-student");
-let close = document.querySelector("close")
-let save = document.querySelector("save");
+let create = document.querySelector("#create");
+let modal = document.querySelector("#create-student");
+let close = document.querySelector("#close")
+let save = document.querySelector("#save");
 let success = document.querySelector(".alert-success")
 let error = document.querySelector(".alert-danger")
 
@@ -19,9 +19,9 @@ close.addEventListener("click", () => {
 
 save.addEventListener("click", async () => {
     try {
-        let name = document.querySelector("name").value;
-        let age = document.querySelector("age").value;
-        let country = document.querySelector("country").value;
+        let name = document.querySelector("#name").value;
+        let age = document.querySelector("#age").value;
+        let country = document.querySelector("#country").value;
 
 
         const res = await fetch("php/insert-data.php", {
@@ -72,7 +72,7 @@ save.addEventListener("click", async () => {
 
 const getStudents = async () => {
     try {
-        const tbody = document.querySelector("tbody");
+        const tbody = document.querySelector("#tbody");
         let tr = "";
         const res = await fetch("php/select-data.php", {
             method: "GET",
